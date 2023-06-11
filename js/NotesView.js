@@ -61,5 +61,12 @@ export default class NotesView {
             const html = this._createListItemHTML(note.id, note.title, note.body, new Date(note.updated));
             notesListContainer.insertAdjacentHTML("beforeend", html);
         }
+
+        // add selectd/delete listener for each item
+        notesListContainer.querySelector(".notes__list-item").forEach(noteListItem => {
+            noteListItem.addEventListener("click", () => {
+                this.onNoteSelect(noteListItem.dataset.noteId);
+            });
+        });
     }
 }
