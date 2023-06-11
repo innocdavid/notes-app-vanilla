@@ -63,10 +63,18 @@ export default class NotesView {
         }
 
         // add selectd/delete listener for each item
-        notesListContainer.querySelector(".notes__list-item").forEach(noteListItem => {
+        notesListContainer.querySelectorAll(".notes__list-item").forEach(noteListItem => {
             noteListItem.addEventListener("click", () => {
                 this.onNoteSelect(noteListItem.dataset.noteId);
             });
+
+            noteListItem.addEventListener("dblclick", () => {
+                const doDelete = confirm("Are you sure you want to delete this note?");
+
+                if (doDelete) {
+                    this.onNoteDelete(noteListItem.dataset.noteId);
+                }
+            })
         });
     }
 }
