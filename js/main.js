@@ -1,7 +1,15 @@
-import NotesAPI from "./NotesApI.js"
+import NotesAPI from "./NotesApI.js";
+import NotesView from "./NotesView.js";
 
-NotesAPI.save({
-    title: "New Note!",
-    body: "I am a new note stored in your localStorage."
-})
-console.log(NotesAPI.getAllNotes());
+const app = document.getElementById("app");
+const view = new NotesView(app, {
+    onNoteAdd() {
+        console.log("Let's add a new note")
+    },
+    onNoteEdit(newTitle, newBody) {
+        console.log(newTitle);
+        console.log(newBody);
+    }
+});
+
+view.updateNoteList(NotesAPI.getAllNotes())
