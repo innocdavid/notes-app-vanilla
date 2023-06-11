@@ -9,6 +9,12 @@ const view = new NotesView(app, {
     onNoteEdit(newTitle, newBody) {
         console.log(newTitle);
         console.log(newBody);
+    },
+    onNoteSelect(id) {
+        console.log("Note Selected:" + id)
+    },
+    onNoteDelete(id) {
+        console.log("Note DELECTED: " + id);
     }
 });
 
