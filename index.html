@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Notes App Vanilla Js</title>
 </head>
 <body>
-    
+    <div class="notes" id="app">
+        <div class="notes__sidebar">
+            <button class="notes__add" type="button">Add Note</button>
+            <div class="notes__list">
+                <div class="notes__list-item">
+                    <div class="notes__small-title">Lecture Notes</div>
+                    <div class="notes__small-body">I've learned nothing forsure.</div>
+                    <div class="notes__small-updated">Thursday 3:45pm</div>
+                </div>
+            </div>
+        </div>
+        <div class="notes__preview"></div>
+    </div>
 </body>
 </html>
